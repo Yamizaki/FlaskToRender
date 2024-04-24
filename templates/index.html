@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir Imagen</title>
+</head>
+<body>
+    <h1>Subir Imagen</h1>
+    <form action="/todo/create" method="post" enctype="multipart/form-data">
+
+        <label for="title">Título:</label><br>
+        <input type="text" id="title" name="title"><br>
+
+        <label for="description">Descripción:</label><br>
+        <textarea id="description" name="description"></textarea><br>
+
+        <label for="technologies">Tecnologias:</label><br>
+        <textarea id="technologies" name="technologies"></textarea><br>
+
+        <label for="proyect_link">Link del proyecto:</label><br>
+        <textarea id="proyect_link" name="proyect_link"></textarea><br>
+
+        <label for="code_source">Link del codigo:</label><br>
+        <textarea id="code_source" name="code_source"></textarea><br>
+        
+        
+        
+        
+        <input type="file" name="file" accept="image/*">
+        <button type="submit">Subir</button>
+    </form>
+</body>
+</html>
