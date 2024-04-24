@@ -11,7 +11,7 @@ def get1Todo(id):
     return getOneTodoService(id)
 
 
-@todo.route('/', methods=['POST'])
+@todo.route('/create', methods=['POST'])
 def createTodo():
     return createTodoService()
 

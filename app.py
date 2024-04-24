@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from routes.todo import todo
 
 from  dotenv import load_dotenv
@@ -16,7 +16,16 @@ mongo.init_app(app)
 
 @app.route('/')
 def index():
-    return 'respuesta texto plano'
+    return render_template('index.html')
+
+##############
+
+
+##############
+
+
+
+
 
 # Trababa de manera similar al URL PATTERNS ed DJANGO
 app.register_blueprint(todo, url_prefix='/todo')

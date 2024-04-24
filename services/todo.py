@@ -1,30 +1,33 @@
 from config.mongodb import mongo
-from flask import request, Response
+from flask import request, Response, redirect, url_for
 
 
 def createTodoService():
-    data = request.get_json()
     
-    title = data.get('title')
-    description = data.get('description', None)
     
-    if title:
-        
-        response = mongo.db.todos.insert_one({
-                'title': title,
-                'description': description,
-                'done': False
-            })
-        result = {
-            'id': str(response.inserted_id),
-            'title': title,
-            'description': description,
-            'done': False
-        }
-        return  result
-    else:
-        return 'Invalid payload', 400
+    title = request.form['title']  
+    description = request.form['description']
+    file = request.files['file']
+    technologies = request.form['technologies']
+    proyect_link = request.form['proyect_link']
+    code_source = request.form['code_source']
+
+    try:
+        image_data = file.read()
+        image_id = mongo.db.todos.insert_one({  'title': title,
+                                                'image': image_data,
+                                                'description': description,
+                                                'technologies': technologies,
+                                                'proyect_link': proyect_link,
+                                                'code_source': code_source
+                                                }).inserted_id
+       
+        return 'Se agregó correctamente'
     
+    except():
+        return 'Hubo un error al agregar un proyecto'
+
+
 def getTodoService():
     from bson import json_util
     
