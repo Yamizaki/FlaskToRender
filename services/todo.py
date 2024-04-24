@@ -1,5 +1,5 @@
 from config.mongodb import mongo
-from flask import request, Response, redirect, url_for
+from flask import request, Response
 
 
 def createTodoService():
