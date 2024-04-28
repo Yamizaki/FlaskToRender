@@ -13,28 +13,53 @@
   </head>
   <body class="bg-black  text-white  text-center mt-5">
 
-    <div >
-      <h1>AGREGAR PROYECTO</h1>
-      <form action="/todo/create" class="bg-black  " method="post" enctype="multipart/form-data">
-        <label for="title">Título:</label><br />
-        <input type="text" id="title" name="title" class="rounded-3 p-2  my-1" /><br />
+    <main class="d-flex justify-content-center">
+      <div >
+        <h1>AGREGAR PROYECTO</h1>
+        <form action="/todo/create" class="bg-warning rounded-5 m-3 p-3" method="post" enctype="multipart/form-data">
+          <label for="title">Título:</label><br />
+          <input type="text" id="title" name="title" class="rounded-3 p-2  my-1" /><br />
+  
+          <label for="description">Descripción:</label><br />
+          <textarea id="description" name="description"  class="rounded-3 p-2 my-1"></textarea><br />
+  
+          <label for="technologies">Tecnologias:</label><br />
+          <input id="technologies" name="technologies" class="rounded-3 p-2 my-1"></input><br />
+  
+          <label for="proyect_link">Link del proyecto:</label><br />
+          <input id="proyect_link" name="proyect_link" class="rounded-3 p-2 my-1"></input><br />
+  
+          <label for="code_source">Link del codigo:</label><br />
+          <input id="code_source" name="code_source" class="rounded-3 p-2 my-1"></input><br />
+  
+          <input type="file" name="file" accept="image/*" class=" px-5 mt-3" />
+          <button type="submit" class="btn btn-success px-5  ">Crear</button>
+        </form>
+      </div>
 
-        <label for="description">Descripción:</label><br />
-        <textarea id="description" name="description"  class="rounded-3 p-2 my-1"></textarea><br />
+      <!-- AQUI SE AGREGARAN LOS CERTIFICADOS -->
+      <div>
+        <h1>AGREGAR CERTIFICADO</h1>
+        <form action="/todo/createCertificado" class="bg-info rounded-5 m-3 p-3" method="post" enctype="multipart/form-data">
+          <label for="title">Título:</label><br />
+          <input type="text" id="title" name="title" class="rounded-3 p-2  my-1" /><br />
+  
+          <label for="description">Descripción:</label><br />
+          <textarea id="description" name="description"  class="rounded-3 p-2 my-1"></textarea><br />
+  
+          <label for="technologies">Tecnologias aprendidas:</label><br />
+          <input id="technologies" name="technologies" class="rounded-3 p-2 my-1"></input><br />
+  
+          <label for="proyect_link">Link del Certificado:</label><br />
+          <input id="proyect_link" name="certificado_link" class="rounded-3 p-2 my-1"></input><br />
+  
+  
+          <input type="file" name="file" accept="image/*" class=" px-5 mt-3" />
+          <button type="submit" class="btn btn-success mt-3 ">Crear</button>
+        </form>
+      </div>
 
-        <label for="technologies">Tecnologias:</label><br />
-        <input id="technologies" name="technologies" class="rounded-3 p-2 my-1"></input><br />
-
-        <label for="proyect_link">Link del proyecto:</label><br />
-        <input id="proyect_link" name="proyect_link" class="rounded-3 p-2 my-1"></input><br />
-
-        <label for="code_source">Link del codigo:</label><br />
-        <input id="code_source" name="code_source" class="rounded-3 p-2 my-1"></input><br />
-
-        <input type="file" name="file" accept="image/*" class=" px-5 mt-3" />
-        <button type="submit" class="btn btn-success mt-3 ">Crear</button>
-      </form>
-    </div>
+    </main>
 
 
     <script
