@@ -1,0 +1,5 @@
+venv
+.env
+
+js.html
+/__pycache__/** 
